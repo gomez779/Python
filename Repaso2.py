@@ -1,11 +1,28 @@
 class Libro:
+    """Clase que representa un libro con título, autor, ISBN y estado de disponibilidad."""
+
     def __init__(self, titulo, autor, isbn):
+        """
+        Inicializa un nuevo libro.
+        
+        Parámetros:
+        titulo (str): El título del libro.
+        autor (str): El autor del libro.
+        isbn (int): El número ISBN del libro.
+        """
         self.__titulo = titulo
         self.__autor = autor
         self.__isbn = isbn
         self.__disponible = True
 
+
     def prestar(self):
+        """
+        Marca el libro como no disponible.
+        
+        Lanza:
+        FileExistsError: Si el libro ya está prestado.
+        """
         if self.__disponible:
             self.__disponible = False
         else:
@@ -31,6 +48,7 @@ class Libro:
         return self.__disponible
 
 class Usuario:
+
     def __init__(self, nombre, dni):
         self.__nombre = nombre
         self.__dni = dni
