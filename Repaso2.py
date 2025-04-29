@@ -89,7 +89,10 @@ class Usuario:
             return [libro.get_titulo for libro in self.__libros_prestados]
         return "Ningún libro prestado"
 
-    def __str__(self):
+    def __str__(self):    
+        """Devuelve una representación legible del estado del libro,
+        incluyendo su título, autor (si está disponible), o indicando que está prestado.
+        """
         return f"{self.__nombre} con DNI: {self.__dni} tiene estos libros prestados {self.get_libros_prestados}"
 
 
