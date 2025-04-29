@@ -72,11 +72,12 @@ class Usuario:
         """
         Permite devolver un libro si está actualmente prestado por el usuario.
         """
-        if libro.get_disponible:
-            raise FileExistsError("El libro ya esta prestado")
-        else:
-            self.__libros_prestados.remove(libro)
-            libro.devolver()
+     if not libro.get_disponible:
+         self.__libros_prestados.remove(libro)
+         libro.devolver()
+    else:
+        raise FileExistsError("El libro ya está disponible y no se puede devolver")
+
 
     @property
     def get_libros_prestados(self):
